@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Click the button!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <style>
+    #annoy {
+      margin: 30% 45%;
+    }
+  </style>
+  <script>
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    }
+
+    function annoy(){
+      var button = document.getElementById("annoy")
+      var x = getRandomInt(10,90)
+      var y = getRandomInt(10,50)
+
+      button.setAttribute(
+        "style",
+        "margin: " +y.toString() +"% " +x.toString() +"%;"
+      )
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <button type="button" class="btn btn-outline-primary" onclick="annoy()" id="annoy">
+        Click Me!
+    </button>
+  </div>
+</body>
+</html>
